@@ -1,12 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-
-export default function Home() {
+import PostListItem from "@/src/components/PostListItem";
+import { FlatList, View } from "react-native";
+import posts from "@/assets/data/posts.json";
+export default function FeedScreen() {
   return (
-    <View className="flex-1 bg-gray-700">
-      <Text className="text-4xl color-red-600">Feed</Text>
+    <View>
+      <FlatList
+        data={posts}
+        renderItem={(data) => <PostListItem post={data.item} />}
+        contentContainerStyle={{ gap: 10 }}
+        showsHorizontalScrollIndicator={false}
+      />
     </View>
   );
 }
-
-const styles = StyleSheet.create({});
