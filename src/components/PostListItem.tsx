@@ -2,7 +2,21 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 import { AntDesign, Ionicons, Feather } from "@expo/vector-icons";
 
-export default function PostListItem({ post }) {
+interface PostListItemProps {
+  post: {
+    id: string;
+    image: string;
+    image_url: string;
+    caption: string;
+    user: {
+      id: string;
+      avatar_url: string;
+      image_url: string;
+      username: string;
+    };
+  };
+}
+export default function PostListItem({ post }: PostListItemProps) {
   return (
     <View className="bg-white">
       {/* header */}
