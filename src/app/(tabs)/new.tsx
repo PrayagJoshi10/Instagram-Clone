@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import * as ImagePicker from "expo-image-picker";
+import Button from "@/src/components/Button";
 
 export default function CreatePost() {
   const [caption, setCaption] = useState("");
@@ -45,9 +46,12 @@ export default function CreatePost() {
         className="w-full p-3"
       />
       <View style={{ marginTop: "auto", width: "100%" }}>
-        <Pressable className="bg-blue-500 w-full p-3 items-center rounded-md">
-          <Text className="text-white font-semibold">Share</Text>
-        </Pressable>
+        <Button
+          label="Share"
+          onPress={() => {
+            console.log("pressed");
+          }}
+        />
       </View>
     </View>
   );
